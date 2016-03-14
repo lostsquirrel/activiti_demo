@@ -44,7 +44,7 @@ import test.leave.utils.UserUtil;
  *
  * @author HenryYan
  */
-//@Controller
+@Controller
 @RequestMapping(value = "/form/dynamic")
 public class DynamicFormController {
 
@@ -137,7 +137,6 @@ public class DynamicFormController {
 	 * 提交task的并保存form
 	 */
 	@RequestMapping(value = "task/complete/{taskId}")
-	@SuppressWarnings("unchecked")
 	public String completeTask(@PathVariable("taskId") String taskId, RedirectAttributes redirectAttributes,
 			HttpServletRequest request) {
 		Map<String, String> formProperties = new HashMap<String, String>();
@@ -169,7 +168,6 @@ public class DynamicFormController {
 	 * 读取启动流程的表单字段
 	 */
 	@RequestMapping(value = "start-process/{processDefinitionId}")
-	@SuppressWarnings("unchecked")
 	public String submitStartFormAndStartProcessInstance(@PathVariable("processDefinitionId") String processDefinitionId,
 			RedirectAttributes redirectAttributes, HttpServletRequest request) {
 		Map<String, String> formProperties = new HashMap<String, String>();

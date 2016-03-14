@@ -12,5 +12,7 @@ public interface LeaveDao {
 
 	Leave findOne(Long id);
 
-	void save(Leave entity);
+	Long save(Leave entity);
+	
+	void addProcessInstanceId(Long id, String processInstanceId);
 }

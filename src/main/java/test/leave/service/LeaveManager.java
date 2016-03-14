@@ -25,11 +25,18 @@ public class LeaveManager {
 	}
 
 	@Transactional(readOnly = false)
-	public void saveLeave(Leave entity) {
+	public Long saveLeave(Leave entity) {
 		if (entity.getId() == null) {
 			entity.setApplyTime(new Date());
 		}
-		leaveDao.save(entity);
+		Long id = leaveDao.save(entity);
+		entity.setId(id);
+		
+		return id;
+	}
+	@Transactional(readOnly = false)
+	public void addProcessInstance(Leave entity) {
+		leaveDao.addProcessInstanceId(entity.getId(), entity.getProcessInstanceId());
 	}
 
 	@Autowired

@@ -52,6 +52,7 @@ public class LeaveWorkflowService {
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("leave", businessKey, variables);
 		String processInstanceId = processInstance.getId();
 		entity.setProcessInstanceId(processInstanceId);
+		leaveManager.addProcessInstance(entity);
 		logger.debug("start process of {key={}, bkey={}, pid={}, variables={}}", new Object[] { "leave", businessKey,
 				processInstanceId, variables });
 		return processInstance;
