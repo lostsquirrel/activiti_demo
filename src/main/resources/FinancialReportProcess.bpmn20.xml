@@ -3,13 +3,14 @@
   
   <process id="financialReport" name="Monthly financial report process">
   
-    <startEvent id="theStart"/>
+    <startEvent id="theStart" /> 
     
     <sequenceFlow id="flow1" sourceRef="theStart" targetRef="writeReportTask"/>
     
     <userTask id="writeReportTask" name="Write monthly financial report">
       <documentation>
         Write monthly financial report for publication to shareholders.
+                        写财务报告，公布给股东
       </documentation>
       <potentialOwner>
         <resourceAssignmentExpression>
@@ -24,6 +25,7 @@
       <documentation>
         Verify monthly financial report composed by the accountancy department.
         This financial report is going to be sent to all the company shareholders.  
+        核查由accountancy部门汇总的财务报告，这些报告会发给公司所有的股东
       </documentation>
       <potentialOwner>
         <resourceAssignmentExpression>

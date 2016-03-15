@@ -17,12 +17,11 @@ public class TenMinuteTutorial {
 		// Create Activiti process engine
 //		ProcessEngine processEngine = ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration()
 //				.buildProcessEngine();
-		String resource = "db.properties";
 		ProcessEngineConfiguration cfg = ProcessEngineConfiguration.createStandaloneProcessEngineConfiguration();
 		cfg.setJdbcDriver("com.mysql.jdbc.Driver");  
 		cfg.setJdbcUrl("jdbc:mysql://localhost:3306/activiti?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8");  
 		cfg.setJdbcUsername("activiti");  
-		cfg.setJdbcPassword("activiti"); 
+		cfg.setJdbcPassword("activiti");
 		cfg.setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE); 
 		ProcessEngine processEngine = cfg
 				.buildProcessEngine();

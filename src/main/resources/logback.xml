@@ -8,6 +8,8 @@
   </appender>
    
   <logger name="org.springframework" level="error"/>
+  <logger name="org.activiti" level="error"/>
+  <logger name="org.apache" level="error"/>
    
  
   <root level="debug">
