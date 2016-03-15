@@ -43,7 +43,12 @@ public class TutorialTakeApart {
 	@Test
 	public void testDeploy() {
 		// Deploy the process definition
-		repositoryService.createDeployment().addClasspathResource("FinancialReportProcess.bpmn20.xml").deploy();
+		String resource = "FinancialReportProcess.bpmn20.xml";
+		deployProcess(resource);
+	}
+
+	private void deployProcess(String resource) {
+		repositoryService.createDeployment().addClasspathResource(resource).deploy();
 	}
 
 	@Test
